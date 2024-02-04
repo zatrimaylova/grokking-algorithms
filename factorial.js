@@ -1,5 +1,4 @@
 const factorial = (x) => {
-  console.log(x);
   if (x === 1) {
     return x;
   } else {
