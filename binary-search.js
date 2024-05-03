@@ -13,16 +13,16 @@ const binarySearch = (list, number) => {
   let high = list.length - 1;
   let middle = Math.floor((low + high) / 2);
 
-  while (list[middle] !== number) {
+  while (list[middle] !== number && low < high) {
     if (list[middle] < number) {
-      low = middle - 1;
+      low = middle + 1;
     } else {
-      high = middle + 1;
+      high = middle - 1;
     }
     middle = Math.floor((low + high) / 2);
   }
 
-  return list[middle];
+  return list[middle] !== number ? -1 : middle;
 };
 
 binarySearch(NUMBERS_ARRAY, numberToSearch);
